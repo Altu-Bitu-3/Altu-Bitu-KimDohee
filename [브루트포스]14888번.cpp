@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -10,10 +10,10 @@ int num[11];
 int op[4];
 
 
-void getResult(int result, int idx) {  //idx´Â ¼ö¸¦ ´ãÀº numÀÇ ÀÎµ¦½º
+void getResult(int result, int idx) {  //idxëŠ” ìˆ˜ë¥¼ ë‹´ì€ numì˜ ì¸ë±ìŠ¤
 	
 
-	if (idx == n) {  //Àç±Í Á¾·á Á¶°Ç
+	if (idx == n) {  //ì¬ê·€ ì¢…ë£Œ ì¡°ê±´
 		if (mn > result) {
 			mn = result;
 		}
@@ -26,28 +26,28 @@ void getResult(int result, int idx) {  //idx´Â ¼ö¸¦ ´ãÀº numÀÇ ÀÎµ¦½º
 
 	for (int i = 0; i < 4; i++) {
 		if (op[i] > 0) {
-			op[i]--;  //¿¬»êÀÚ ¼Ò¸ğÇßÀ¸¹Ç·Î ÇÏ³ª °¨¼Ò
-			if (i == 0) { //´õÇÏ±â
-				getResult(result + num[idx], idx + 1);  //numÀÇ ´ÙÀ½ ÀÎµ¦½º¿ÍÀÇ ¿¬»ê ÁøÇà
+			op[i]--;  //ì—°ì‚°ì ì†Œëª¨í–ˆìœ¼ë¯€ë¡œ í•˜ë‚˜ ê°ì†Œ
+			if (i == 0) { //ë”í•˜ê¸°
+				getResult(result + num[idx], idx + 1);  //numì˜ ë‹¤ìŒ ì¸ë±ìŠ¤ì™€ì˜ ì—°ì‚° ì§„í–‰
 			}
-			else if (i == 1) {//»©±â
+			else if (i == 1) {//ë¹¼ê¸°
 				getResult(result - num[idx], idx + 1);
 			}
-			else if (i == 2) {  //°öÇÏ±â
+			else if (i == 2) {  //ê³±í•˜ê¸°
 				getResult(result * num[idx], idx + 1);
 			}
-			else {				//³ª´©±â
+			else {				//ë‚˜ëˆ„ê¸°
 			getResult(result / num[idx], idx + 1);
 			}
 		
-			op[i]++;   //ÇÏ³ª ´Ù½Ã ´Ã¸²
+			op[i]++;   //í•˜ë‚˜ ë‹¤ì‹œ ëŠ˜ë¦¼
 		}
 	}
 }
 
 
 int main() {
-	//¼öÀÇ °³¼ö ÀÔ·Â
+	//ìˆ˜ì˜ ê°œìˆ˜ ì…ë ¥
 	cin >> n;
 
 	for (int i = 0; i < n; i++) {
